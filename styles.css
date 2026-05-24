@@ -1,0 +1,704 @@
+/* ============================================
+   ОБЩИЕ СТИЛИ
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* ============================================
+   НАВИГАЦИЯ (HEADER) - ПК ВЕРСИЯ (МЕНЮ ПО ЦЕНТРУ)
+   ============================================ */
+
+.navbar-custom {
+  background-color: transparent;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar-custom.scrolled {
+  background-color: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(12px);
+  padding: 14px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Desktop: Grid для центрирования меню */
+.navbar-custom .container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Лого | Меню | Пустое место */
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.logo {
+  justify-self: start; /* Логотип слева */
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  justify-self: center; /* Меню по центру */
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #888;
+  transition: color 0.3s ease;
+  padding: 8px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #fff;
+  background-color: rgba(200, 80, 192, 0.15);
+}
+
+.burger {
+  display: none !important;
+}
+
+/* ============================================
+   HERO СЕКЦИЯ
+   ============================================ */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 160px 20px 120px;
+}
+
+/* ============================================
+   ФОНОВОЕ СВЕЧЕНИЕ
+   ============================================ */
+
+.glow-circle {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+      #58304A 0%,
+      #311929 40%,
+      transparent 75%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 28px;
+  letter-spacing: 3px;
+}
+
+.hero-content p {
+  font-size: 16px;
+  color: #999;
+  line-height: 1.8;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   СЕКЦИЯ ПРЕИМУЩЕСТВА
+   ============================================ */
+
+.advantages-section {
+  padding: 140px 20px 120px;
+  text-align: center;
+  position: relative;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.section-title span {
+  color: #c850c0;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.advantage-card {
+  background: linear-gradient(145deg, #1a1a2e, #12121f);
+  border: 1px solid rgba(200, 80, 192, 0.15);
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: left;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.advantage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(200, 80, 192, 0.15);
+  border-color: rgba(200, 80, 192, 0.4);
+}
+
+.advantage-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle,
+      rgba(200, 80, 192, 0.08) 0%,
+      transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.advantage-card:hover::before {
+  opacity: 1;
+}
+
+.advantage-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #c850c0;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.advantage-card p {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.7;
+}
+
+/* ============================================
+   СЕКЦИЯ ТАРИФЫ
+   ============================================ */
+
+.tariffs-section {
+  padding: 120px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.tariffs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tariff-card {
+  background: linear-gradient(145deg, #1a1a2e, #12121f);
+  border: 1px solid rgba(200, 80, 192, 0.15);
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tariff-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(200, 80, 192, 0.2);
+  border-color: rgba(200, 80, 192, 0.5);
+}
+
+.tariff-card.featured {
+  border-color: rgba(200, 80, 192, 0.6);
+  box-shadow: 0 0 60px rgba(200, 80, 192, 0.15);
+  transform: scale(1.05);
+}
+
+.tariff-card.featured:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #c850c0, #9333ea);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.tariff-header {
+  margin-bottom: 30px;
+}
+
+.tariff-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.tariff-price {
+  font-size: 42px;
+  font-weight: 800;
+  color: #c850c0;
+  margin-bottom: 5px;
+}
+
+.tariff-price span {
+  font-size: 14px;
+  color: #888;
+  font-weight: 400;
+}
+
+.tariff-features {
+  list-style: none;
+  margin: 30px 0;
+  padding: 0;
+  text-align: left;
+}
+
+.tariff-features li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  color: #ccc;
+}
+
+.tariff-features li:last-child {
+  border-bottom: none;
+}
+
+.tariff-features li.disabled {
+  color: #555;
+}
+
+.tariff-btn {
+  width: 100%;
+  padding: 15px 30px;
+  background: transparent;
+  border: 2px solid #c850c0;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tariff-btn:hover {
+  background: linear-gradient(135deg, #c850c0, #9333ea);
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(200, 80, 192, 0.3);
+}
+
+/* ============================================
+   СЕКЦИЯ О НАС
+   ============================================ */
+
+.about-section {
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 120px 20px 140px;
+}
+
+.about-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-section .section-title {
+  margin-bottom: 50px;
+}
+
+.about-section .glow-circle {
+  width: 800px;
+  height: 800px;
+}
+
+.about-text p {
+  font-size: 15px;
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-text strong {
+  color: #c850c0;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin: 50px 0;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  color: #c850c0;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #555;
+  font-size: 13px;
+}
+
+.footer-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-links a {
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #c850c0;
+}
+
+/* ============================================
+   АНИМАЦИИ
+   ============================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   ПЛАНШЕТЫ (до 1024px)
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .navbar-custom .container { padding: 0 30px; }
+  .logo img { height: 50px; }
+  .nav-links { gap: 20px; }
+  .nav-links li a { font-size: 11px; padding: 6px 10px; }
+  .hero-content h1 { font-size: 52px; }
+  .advantages-grid, .tariffs-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================
+   МОБИЛЬНЫЕ (до 768px) — МЕНЮ СПРАВА
+   ============================================ */
+
+@media (max-width: 768px) {
+  
+  /* ---------- НАВИГАЦИЯ: ЛОГО СЛЕВА, МЕНЮ СПРАВА ---------- */
+  .navbar-custom {
+    padding: 14px 0;
+    background-color: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(12px);
+  }
+
+  .navbar-custom.scrolled {
+    padding: 10px 0;
+  }
+
+  .navbar-custom .container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center;
+    padding: 0 15px !important;
+    gap: 0 !important;
+    grid-template-columns: unset !important; /* Сбрасываем десктопный грид */
+  }
+  
+  .logo {
+    justify-self: unset !important;
+    order: 1;
+    margin: 0 !important;
+  }
+  
+  .logo img { height: 40px; }
+
+  .nav-links {
+    justify-self: unset !important;
+    order: 2;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    align-items: center;
+    gap: 12px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-wrap: nowrap !important;
+  }
+  
+  .nav-links li { list-style: none; }
+  
+  .nav-links li a {
+    font-size: 10px !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #888;
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    white-space: nowrap;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    color: #fff;
+    background: transparent !important;
+  }
+
+  /* ---------- ГЛАВНЫЙ ЭКРАН ---------- */
+  .hero-section {
+    padding: 110px 15px 70px;
+    min-height: 100vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 38px;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+  
+  .hero-content p {
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 100%;
+    padding: 0 5px;
+  }
+
+  .glow-circle { width: 320px; height: 320px; }
+
+  /* ---------- ОТСТУП ПРИ СКРОЛЛЕ ---------- */
+  section {
+    scroll-margin-top: 45px;
+  }
+
+  /* ---------- ПРЕИМУЩЕСТВА ---------- */
+  .advantages-section {
+    padding: 0 15px 70px;
+  }
+  
+  .section-title {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  
+  .advantage-card {
+    padding: 20px 16px;
+    text-align: center;
+  }
+  
+  .advantage-card h3,
+  .advantage-card p { text-align: center; }
+
+  /* ---------- ТАРИФЫ ---------- */
+  .tariffs-section {
+    padding: 40px 15px 70px;
+  }
+
+  .tariffs-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .tariff-card { padding: 24px 16px; }
+  
+  .tariff-card.featured { transform: scale(1); }
+  .tariff-card.featured:hover { transform: translateY(-5px); }
+  
+  .tariff-header h3 { font-size: 17px; }
+  .tariff-price { font-size: 32px; }
+  
+  .tariff-features {
+    text-align: center;
+    margin: 15px 0;
+  }
+  
+  .tariff-features li {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  /* ---------- О НАС ---------- */
+  .about-section {
+    padding: 40px 15px 80px;
+  }
+
+  .about-section .glow-circle { width: 400px; height: 400px; }
+  .about-content { max-width: 100%; }
+  .about-text p { font-size: 13px; }
+  
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+    padding: 15px 0;
+  }
+  
+  .stat-number { font-size: 24px; }
+  .stat-label { font-size: 11px; }
+
+  /* ---------- FOOTER ---------- */
+  .footer { padding: 25px 15px; }
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+}
+
+/* ============================================
+   ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (до 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+  .navbar-custom .container { padding: 0 12px !important; }
+  .logo img { height: 36px; }
+  .nav-links { gap: 8px !important; }
+  .nav-links li a { font-size: 9px !important; }
+  
+  .hero-section { padding: 100px 12px 60px; }
+  .hero-content h1 { font-size: 32px; }
+  .hero-content p { font-size: 12px; }
+  
+  .glow-circle { width: 260px; height: 260px; }
+  
+  .advantages-section { padding: 0 12px 60px; }
+  .tariffs-section, .about-section { padding: 30px 12px 70px; }
+  
+  .section-title { font-size: 20px; margin-bottom: 20px; }
+  .advantage-card { padding: 18px 14px; }
+  .tariff-card { padding: 22px 14px; }
+  .tariff-price { font-size: 28px; }
+  
+  .about-stats { grid-template-columns: 1fr; gap: 12px; }
+  .stat-number { font-size: 22px; }
+}
+/* ============================================
+   ИСПРАВЛЕНИЕ ОТСТУПОВ (ДЕСКТОП)
+   ============================================ */
+@media (min-width: 769px) {
+  section {
+    scroll-margin-top: 100px; /* Чёткий отступ под фиксированное меню */
+  }
+
+  .advantages-section {
+    padding: 140px 20px 220px; /* Увеличили нижний отступ, чтобы тарифы не вылезали */
+  }
+
+  .tariffs-section {
+    padding-top: 80px; /* Плавный визуальный переход к следующему блоку */
+  }
+}

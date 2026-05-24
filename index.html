@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="MUSICAL — современная платформа для музыкантов. Дистрибуция треков, AI-модели, аналитика.">
+  <title>MUSICAL — Твоя музыка</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Ваши стили -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ============================================
+       НАВИГАЦИЯ
+       ============================================ -->
+  <nav class="navbar-custom" id="navbar">
+    <div class="container">
+      <a href="#hero" class="logo">
+        <img src="images/1776861401-no-bg-preview (carve.photos).png" alt="MUSICAL">
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="active">Главная</a></li>
+        <li><a href="#advantages">Преимущества</a></li>
+        <li><a href="#tariffs">Тарифы</a></li>
+        <li><a href="#about">О нас</a></li>
+      </ul>
+      <!-- Бургер-меню полностью удалено -->
+    </div>
+  </nav>
+
+
+  <!-- ============================================
+       HERO (ГЛАВНАЯ)
+       ============================================ -->
+  <section class="hero-section" id="hero">
+    <div class="glow-circle"></div>
+    <div class="hero-content reveal">
+      <h1>ТВОЯ<br>МУЗЫКА</h1>
+      <p>
+        Бесплатные треки на все цифровые площадки.
+        Безлимитное прослушивание в качестве оригинала.
+        Забирай 50% дохода с продажи мерча от одного клика.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       ПРЕИМУЩЕСТВА
+       ============================================ -->
+  <section class="advantages-section" id="advantages">
+    <h2 class="section-title reveal">
+      ПРЕИМУЩЕСТВА <span>MUSICAL</span>
+    </h2>
+
+    <div class="advantages-grid">
+      <div class="advantage-card reveal">
+        <h3>Все площадки</h3>
+        <p>Мы 100% попадаем в топ-чарты по всем площадкам. Spotify, Apple Music, Яндекс Музыка — всё на месте.</p>
+      </div>
+      <div class="advantage-card reveal">
+        <h3>Просто подписка</h3>
+        <p>Мы предлагаем бесплатный доступ ко всему контенту. Просто подпишись и работай в студии.</p>
+      </div>
+      <div class="advantage-card reveal">
+        <h3>Выставим модели с правильной системой</h3>
+        <p>Выставляем в чартах и алгоритмах площадок. Ваши треки получают больше прослушиваний, чем при ручной работе.
+        </p>
+      </div>
+      <div class="advantage-card reveal">
+        <h3>Вой гред</h3>
+        <p>Вы можете выразить свой голос с помощью AI-модели. Голос, который невозможно отличить от настоящего.</p>
+      </div>
+      <div class="advantage-card reveal">
+        <h3>Заготовки эффектов на лёгких расш.</h3>
+        <p>Готовые наборы эффектов для быстрой обработки. Создавайте треки мечты за несколько минут с помощью наших
+          инструментов.</p>
+      </div>
+      <div class="advantage-card reveal">
+        <h3>Файловая система утрока</h3>
+        <p>Удобное хранилище ваших проектов. Все файлы в одном месте, автоматическое резервное копирование каждый день.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       ТАРИФЫ
+       ============================================ -->
+  <section class="tariffs-section" id="tariffs">
+    <h2 class="section-title reveal">ТАРИФЫ</h2>
+
+    <div class="tariffs-grid">
+      <!-- Тариф 1 -->
+      <div class="tariff-card reveal">
+        <div class="tariff-header">
+          <h3>СТАРТ</h3>
+          <div class="tariff-price">0 ₽<span>/месяц</span></div>
+        </div>
+        <ul class="tariff-features">
+          <li>✓ Доступ ко всем площадкам</li>
+          <li>✓ 10 треков в месяц</li>
+          <li>✓ Стандартное качество</li>
+          <li>✓ Базовая статистика</li>
+          <li class="disabled">✗ AI-модели</li>
+          <li class="disabled">✗ Приоритетная поддержка</li>
+        </ul>
+        <button class="tariff-btn">Выбрать</button>
+      </div>
+
+      <!-- Тариф 2 (Популярный) -->
+      <div class="tariff-card featured reveal">
+        <div class="popular-badge">ПОПУЛЯРНЫЙ</div>
+        <div class="tariff-header">
+          <h3>ПРОФИ</h3>
+          <div class="tariff-price">990 ₽<span>/месяц</span></div>
+        </div>
+        <ul class="tariff-features">
+          <li>✓ Доступ ко всем площадкам</li>
+          <li>✓ Безлимитные треки</li>
+          <li>✓ Hi-Fi качество</li>
+          <li>✓ Расширенная статистика</li>
+          <li>✓ AI-модели голоса</li>
+          <li class="disabled">✗ Приоритетная поддержка</li>
+        </ul>
+        <button class="tariff-btn">Выбрать</button>
+      </div>
+
+      <!-- Тариф 3 -->
+      <div class="tariff-card reveal">
+        <div class="tariff-header">
+          <h3>БИЗНЕС</h3>
+          <div class="tariff-price">2490 ₽<span>/месяц</span></div>
+        </div>
+        <ul class="tariff-features">
+          <li>✓ Доступ ко всем площадкам</li>
+          <li>✓ Безлимитные треки</li>
+          <li>✓ Master качество</li>
+          <li>✓ Полная аналитика</li>
+          <li>✓ AI-модели голоса</li>
+          <li>✓ 24/7 поддержка</li>
+        </ul>
+        <button class="tariff-btn">Выбрать</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       О НАС
+       ============================================ -->
+  <section class="about-section" id="about">
+    <div class="glow-circle"></div>
+    <div class="about-content reveal">
+      <h2 class="section-title">О НАС</h2>
+
+      <div class="about-text">
+        <p>
+          <strong>MUSICAL</strong> — это современная платформа для музыкантов и продюсеров,
+          которая объединяет всё необходимое для создания и продвижения музыки.
+        </p>
+
+        <p>
+          Мы работаем с 2020 года и за это время помогли более чем 10 000 артистам
+          выпустить свои треки на всех основных цифровых площадках мира.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number">10 000+</div>
+            <div class="stat-label">Артистов</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">50 000+</div>
+            <div class="stat-label">Треков</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">150M+</div>
+            <div class="stat-label">Прослушиваний</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Поддержка</div>
+          </div>
+        </div>
+
+        <p>
+          Наша миссия — сделать процесс создания и дистрибуции музыки максимально
+          простым и доступным для каждого. Мы предоставляем инструменты,
+          которые раньше были доступны только крупным лейблам.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 MUSICAL. Все права защищены.</p>
+      <div class="footer-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Условия использования</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================
+       СКРИПТЫ
+       ============================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Ваш JS файл -->
+  <script src="javascript.js"></script>
+
+</body>
+
+</html>
